@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grand Desain — IsyaratKita | Project Akhir Laravel</title>
+  <style>
+    :root {
+      --teal: #0f9d8a;
+      --teal-d: #0b7a6c;
+      --coral: #ff7a59;
+      --ink: #1e293b;
+      --muted: #64748b;
+      --bg: #f4fbf9;
+      --card: #ffffff;
+      --line: #d7efe9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      padding: 28px;
+    }
+    .poster {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 28px;
+      padding: 28px 32px 36px;
+      box-shadow: 0 16px 50px rgba(15, 157, 138, 0.12);
+    }
+    header {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      border-bottom: 3px solid var(--line);
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+    }
+    .logo-mark {
+      width: 86px; height: 86px;
+      border-radius: 22px;
+      background: linear-gradient(145deg, #14b8a6, #0f766e);
+      display: grid; place-items: center;
+      color: #fff; font-size: 38px;
+      box-shadow: 0 8px 18px rgba(15, 118, 110, 0.35);
+      flex-shrink: 0;
+    }
+    .brand h1 { font-size: 34px; letter-spacing: -0.5px; }
+    .brand h1 span { color: var(--teal); }
+    .kicker { color: var(--coral); font-weight: 700; font-size: 12px; letter-spacing: 2.4px; text-transform: uppercase; }
+    .tag { color: var(--muted); margin-top: 4px; font-size: 15px; }
+    .meta { margin-left: auto; text-align: right; font-size: 13px; color: var(--muted); }
+    .meta b { color: var(--teal-d); display: block; font-size: 16px; }
+    .grid { display: grid; grid-template-columns: 1.1fr 1fr 1.15fr; gap: 14px; }
+    .span2 { grid-column: span 2; }
+    .span3 { grid-column: span 3; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+    .card h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .num {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--teal); color: #fff;
+      font-size: 13px; display: grid; place-items: center; font-weight: 700;
+    }
+    ul { padding-left: 18px; font-size: 13.5px; line-height: 1.55; color: #334155; }
+    p { font-size: 13.5px; line-height: 1.55; color: #334155; }
+    .note {
+      background: #ecfdf8; border: 1px dashed #99f6e4; border-radius: 12px;
+      padding: 10px 12px; font-size: 13px; margin-top: 8px; color: #115e59;
+    }
+    .roles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .role { border-radius: 12px; padding: 10px 12px; }
+    .guest { background: #ecfeff; }
+    .admin { background: #fff7ed; }
+    .role h3 { font-size: 13px; margin-bottom: 6px; }
+    .flow {
+      display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+    }
+    .chip {
+      background: #0f766e; color: #fff; font-size: 12px; font-weight: 600;
+      padding: 7px 10px; border-radius: 999px;
+    }
+    .arrow { color: var(--coral); font-weight: 800; }
+    .er { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tbl {
+      border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px;
+      font-size: 12px; min-width: 140px; background: #f8fffd;
+    }
+    .tbl b { display: block; color: var(--teal-d); margin-bottom: 3px; }
+    .mock {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    }
+    .screen {
+      border: 1px solid var(--line); border-radius: 12px; overflow: hidden; font-size: 12px;
+    }
+    .bar { background: var(--teal); color: #fff; padding: 7px 10px; font-weight: 700; }
+    .bar.dark { background: #134e4a; }
+    .body-s { padding: 10px; background: #f8fafc; min-height: 118px; }
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .mini { background: #fff; border-radius: 8px; padding: 8px; border: 1px solid #e2e8f0; }
+    table { width: 100%; border-collapse: collapse; font-size: 11px; background: #fff; }
+    th, td { border-bottom: 1px solid #e2e8f0; padding: 5px; text-align: left; }
+    .git { font-family: ui-monospace, Consolas, monospace; font-size: 12px; background: #0f172a; color: #a7f3d0; padding: 10px; border-radius: 10px; }
+    .two { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 14px; }
+    .score { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 13px; }
+    .score div { background: #f0fdfa; border-radius: 8px; padding: 7px 9px; }
+    footer { margin-top: 16px; font-size: 12px; color: var(--muted); text-align: center; }
+  </style>
+</head>
+<body>
+  <article class="poster">
+    <header>
+      <img class="logo-mark" src="/public/images/logo-isyaratkita.png" alt="Logo IsyaratKita" style="object-fit:cover;padding:0;background:#fff;" />
+      <div class="brand">
+        <div class="kicker">Project Akhir · Pemrograman Framework Laravel</div>
+        <h1>Isyarat<span>Kita</span></h1>
+        <div class="tag">Platform belajar Bahasa Isyarat Indonesia (BISINDO) untuk anak tunarungu, tuli, dan bisu — plus orang tua &amp; guru.</div>
+      </div>
+      <div class="meta">
+        <b>meicha-isyarat</b>
+        Solo · Guest + Admin · Laravel 13
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2><span class="num">1</span> Tujuan</h2>
+        <p>Membangun aplikasi web utuh (bukan sekadar CRUD) yang membantu anak dengan hambatan dengar/bicara belajar isyarat secara visual, bertahap, dan aman dikurasi.</p>
+        <div class="note">Data yang dilihat Guest berasal dari database yang dikelola Admin. Desain konsisten, profesional, ramah anak, kontras tinggi.</div>
+      </section>
+
+      <section class="card">
+        <h2><span class="num">2</span> Masalah &amp; manfaat</h2>
+        <ul>
+          <li>Materi BISINDO untuk anak sering tersebar dan tidak terstruktur.</li>
+          <li>Orang tua/guru butuh kamus visual + panduan pendampingan.</li>
+          <li>Komunitas butuh agenda workshop yang terpusat.</li>
+          <li>Manfaat jangka panjang: inklusi, literasi isyarat, arsip konten yang bisa tumbuh.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2><span class="num">3</span> Pengguna</h2>
+        <div class="roles">
+          <div class="role guest">
+            <h3>Guest / Public</h3>
+            <ul>
+              <li>Beranda &amp; pencarian</li>
+              <li>Kamus isyarat + filter kategori</li>
+              <li>Modul belajar &amp; cerita visual</li>
+              <li>Artikel &amp; agenda kegiatan</li>
+            </ul>
+          </div>
+          <div class="role admin">
+            <h3>Admin</h3>
+            <ul>
+              <li>Auth + session + middleware</li>
+              <li>CRUD kategori, isyarat, modul</li>
+              <li>Upload gambar/video</li>
+              <li>Kelola artikel &amp; event</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card span2">
+        <h2><span class="num">4</span> Contoh tampilan (wireframe konsep)</h2>
+        <div class="mock">
+          <div class="screen">
+            <div class="bar">IsyaratKita · Guest</div>
+            <div class="body-s">
+              <b>Belajar isyarat, selangkah lebih dekat</b>
+              <p style="margin:6px 0 8px">Cari kata, pelajari gerakan, ulangi lewat cerita.</p>
+              <div class="cards">
+                <div class="mini">Keluarga<br/><small>12 isyarat</small></div>
+                <div class="mini">Sekolah<br/><small>9 isyarat</small></div>
+                <div class="mini">Emosi<br/><small>8 isyarat</small></div>
+                <div class="mini">Angka<br/><small>10 isyarat</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="screen">
+            <div class="bar dark">Admin Dashboard</div>
+            <div class="body-s">
+              <table>
+                <thead><tr><th>Isyarat</th><th>Kategori</th><th>Media</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Ibu</td><td>Keluarga</td><td>gambar+video</td><td>Publish</td></tr>
+                  <tr><td>Terima kasih</td><td>Sopan santun</td><td>video</td><td>Publish</td></tr>
+                  <tr><td>Senang</td><td>Emosi</td><td>gambar</td><td>Draft</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2><span class="num">5</span> Logo</h2>
+        <p>Tanda tangan + hati di kotak rounded teal: dua pihak saling memahami tanpa suara. Warna teal (tenang, tumbuh) dan aksen coral (hangat, anak). Wordmark <b>IsyaratKita</b> — “isyarat milik kita bersama”.</p>
+        <div class="note">Logo original, bukan copy brand lain. File: public/images/logo-isyaratkita.png</div>
+      </section>
+
+      <section class="card span3">
+        <h2><span class="num">6</span> Alur kerja Laravel (wajib dipahami, bukan hafalan)</h2>
+        <div class="flow">
+          <span class="chip">Browser</span><span class="arrow">→</span>
+          <span class="chip">Route</span><span class="arrow">→</span>
+          <span class="chip">Middleware Auth/Role</span><span class="arrow">→</span>
+          <span class="chip">Controller</span><span class="arrow">→</span>
+          <span class="chip">Validation</span><span class="arrow">→</span>
+          <span class="chip">Model Eloquent</span><span class="arrow">→</span>
+          <span class="chip">View Blade</span><span class="arrow">→</span>
+          <span class="chip">Response</span>
+        </div>
+        <p style="margin-top:10px"><b>Fitur pendukung tiap tahap:</b> Auth · Middleware · Session · Upload File · Search &amp; Filter · Pagination · Flash message</p>
+      </section>
+
+      <section class="card">
+        <h2><span class="num">7</span> Relasi data</h2>
+        <div class="er">
+          <div class="tbl"><b>users</b>id, name, email, role</div>
+          <div class="tbl"><b>categories</b>name, slug, icon</div>
+          <div class="tbl"><b>signs</b>word, meaning, level, category_id, status</div>
+          <div class="tbl"><b>media</b>sign_id, type, path</div>
+          <div class="tbl"><b>lessons</b>title, level, order</div>
+          <div class="tbl"><b>lesson_sign</b>lesson_id, sign_id</div>
+          <div class="tbl"><b>articles</b>title, body, cover</div>
+          <div class="tbl"><b>events</b>title, date, place</div>
+        </div>
+        <div class="note">1 kategori punya banyak isyarat. 1 isyarat punya banyak media. Modul belajar merangkai banyak isyarat (many-to-many).</div>
+      </section>
+
+      <section class="card">
+        <h2><span class="num">8</span> Referensi template</h2>
+        <p>Dilihat dulu, belum dipakai langsung (sesuai arahan dosen).</p>
+        <ul>
+          <li>Guest: Kidkinder / tema education anak — https://themewagon.com/theme-price/free/</li>
+          <li>Admin: AdminKit atau Soft UI Dashboard (gratis)</li>
+        </ul>
+        <div class="note">Palet, tipografi, kartu, dan komponen akan diseragamkan ke identitas IsyaratKita.</div>
+      </section>
+
+      <section class="card">
+        <h2><span class="num">9</span> Git &amp; penilaian</h2>
+        <div class="git">feat: menambahkan CRUD kamus isyarat<br/>feat: membuat halaman beranda guest<br/>fix: memperbaiki validasi unggah media<br/>refactor: blade component navbar</div>
+        <p style="margin-top:8px">Repo khusus Project Akhir (bukan praktikum). Commit tiap pertemuan. Riwayat ditunjukkan saat presentasi.</p>
+      </section>
+    </div>
+
+    <div class="two" style="margin-top:14px">
+      <section class="card">
+        <h2><span class="num">10</span> Modul fitur (bukan CRUD terpisah)</h2>
+        <ul>
+          <li><b>Kamus Isyarat</b> — jantung aplikasi: kata → gerakan → contoh kalimat.</li>
+          <li><b>Belajar Bertahap</b> — modul per level, mengunci urutan pemahaman.</li>
+          <li><b>Cerita Visual</b> — isyarat dirangkai jadi narasi pendek anak.</li>
+          <li><b>Keluarga &amp; Guru</b> — artikel pendampingan, tips komunikasi di rumah/sekolah.</li>
+          <li><b>Agenda</b> — workshop BISINDO / kegiatan inklusi.</li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2><span class="num">11</span> Kesiapan presentasi</h2>
+        <div class="score">
+          <div>✓ Demo Guest &amp; Admin</div>
+          <div>✓ CRUD Admin terlihat di Guest</div>
+          <div>✓ Riwayat Git</div>
+          <div>✓ Relasi tabel</div>
+          <div>✓ Satu fitur di-debug live</div>
+          <div>✓ Blade component</div>
+        </div>
+      </section>
+    </div>
+    <footer>Grand desain Project Akhir · IsyaratKita · Meicha · Repo meicha-isyarat · Konten akan dipindah ke tldraw sebagai papan kerja resmi.</footer>
+  </article>
+</body>
+</html>
